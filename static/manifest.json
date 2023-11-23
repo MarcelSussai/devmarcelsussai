@@ -1,0 +1,11 @@
+{
+  "name": "MarcelSussai Desenvolvedor FullStack",
+  "short_name": "Marcel Sussai",
+  "description": "Criação de sites, lojas virtuais, aplicativos, web apps e mais .... Marcel Sussai Desenvolvedor Fullstack freelancer",
+  "theme_color": "#3c90e5",
+  "background_color": "#161616",
+  "display": "standalone",
+  "lang": "pt-BR",
+  "scope": "/",
+  "start_url": "/"
+}
