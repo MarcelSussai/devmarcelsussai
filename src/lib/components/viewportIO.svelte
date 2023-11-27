@@ -15,7 +15,7 @@ let unobserve = () => {}
 let intersectionObserverSupport = false
 let intersectBottom: boolean
 
-function intersectPercent(entries: any) {
+function intersectPercent(entries: IntersectionObserverEntry[]) {
   entries.forEach((entry: IntersectionObserverEntry) => {
     if(entry.rootBounds?.bottom && entry.boundingClientRect.bottom > entry.rootBounds?.bottom) {
       percent = Math.round(Math.ceil(entry.intersectionRatio * 100))
