@@ -6,6 +6,8 @@ export let bottom = 0
 export let left = 0
 export let right = 0
 export let steps = 100
+export let width = '100%'
+export let height = '100%'
 // export let threeshold = 1
 
 let element: HTMLElement
@@ -60,12 +62,12 @@ onMount(() => {
 </script>
 
 
-<div bind:this={element}>
+<div style={`--w: ${width}; --h: ${height}`} bind:this={element}>
   <slot {percent} {unobserve} {intersectBottom}></slot>
 </div>
 
 
 
 <style>
-  div { width: 100%; height: 100%; }
+  div { width: var(--w, 100%); height: var(--h, 100%); }
 </style>

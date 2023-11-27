@@ -4,18 +4,16 @@
   import Globe from '$components/globe.svelte'
   import HomeMarquee from '$components/homeMarquee.svelte'
   import { appear_open } from '$utils/animations'
-  import ViewportIo from '$components/viewportIO.svelte';
+  import ViewportIo from '$components/viewportIO.svelte'
+  import PageTitle from '$components/pageTitle.svelte';
 
 // TODO: animações css 3d
 
   let init_all = false
-  let isVisible_h1: boolean = true
-  let h1_el: HTMLElement
 
 
   onMount(() => init_all = true)
 
-  $: style_h1 = isVisible_h1 ? '--trs: 0 0 0; --opc: 1;' : '--trs: 100% 0 0; --opc: 0;'
 
 </script>
 
@@ -53,11 +51,18 @@
 {/if}
 
 
-<ViewportIo let:percent >
+<!-- <ViewportIo height="fit-content" let:percent >
   <h1 style={ percent >= 80 ? '--trs: 0 0 0; --opc: 1;' : '--trs: 100% 0 0; --opc: 0;' }>
     Como desenvolvedor fullstack <span class="b-03">posso fazer o projeto todo</span> se necessário, <span class="b-03">mas sou especialista front-end!</span>
   </h1>
+</ViewportIo> -->
+
+<ViewportIo height="fit-content" let:percent>
+  <PageTitle appear={percent >= 80 }>
+    Como desenvolvedor fullstack <span class="b-03">posso fazer o projeto todo</span> se necessário, <span class="b-03">mas sou especialista front-end!</span>\
+  </PageTitle>
 </ViewportIo>
+
 
 
 
@@ -107,7 +112,7 @@
   }
   .all-02 {
     --siz-01:   4px;
-    padding:    12px;
+    padding:    16px;
     /* border:     solid var(--siz-01) var(--clr-grey-175); */
     /* border-top: none;
     border-bottom: none; */
@@ -177,7 +182,7 @@
       --bef-h: 96px;
     }
     .p-01 { --siz-01: 2.16rem; } b { font-size: 2.24rem; }
-    .all-02 { --siz-01: 8px; padding: 24px;}
+    .all-02 { --siz-01: 8px; padding: 8px;}
     .hello { font-size: 4rem; }
     h1 { font-size: 3.4rem; }
   }
@@ -187,7 +192,7 @@
       --bef-h: 104px;
     }
     .p-01 { --siz-01: 2.24rem; } b { font-size: 2.32rem; }
-    .all-02 { --siz-01: 12px; padding: 32px; }
+    .all-02 { --siz-01: 12px; padding: 12px; }
   }
   @media screen and (min-width: 1024px) {
     .all-01 {
