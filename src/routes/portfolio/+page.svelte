@@ -1,4 +1,5 @@
 <script lang='ts'>
+
   
 
 
@@ -8,11 +9,12 @@
 </script>
 
 
-
-teste
+<section>
+  teste
+</section>
 
 
 
 <style>
-  
+
 </style>

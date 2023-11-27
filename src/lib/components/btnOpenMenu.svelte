@@ -21,6 +21,10 @@
 
 
 <style>
+  @keyframes appear-btn-menu {
+    0% { translate: 100% 0 0; opacity: .1; }
+    100% { translate: 0 0 0; opacity: 1; }
+  }
   .all {
     --trs-01: all .6s var(--cubic-easeInOutBack);
     --trs-02: all .4s var(--cubic-easeInOutQuad);
@@ -51,6 +55,8 @@
     box-shadow:       var(--shd-02);
     justify-content:  flex-start;
     backdrop-filter:  blur(2px);
+    translate: 100% 0 0; opacity: .1;
+    animation: appear-btn-menu .6s var(--cubic-easeInOutQuart) forwards;
     z-index: 99;
   }
   .all::after {
@@ -115,6 +121,7 @@
     .all {
       animation: unset;
       translate: 100% 0 0;
+      animation: unset;
     }
   }
 </style>

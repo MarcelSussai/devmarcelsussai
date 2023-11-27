@@ -27,9 +27,15 @@
   @keyframes ani-logotype-01 { 0% {
     width: 0%;
     padding: 0;
+    opacity: .2;
+    translate: 0 -200% 0;
+  } 32% {
+    translate: 0 0 0;
   } 100% {
     width: 100%;
     padding:        8px 10px 8px 8px;
+    opacity: 1;
+    translate: 0 0 0;
   } }
   .transiiton-item { transition: all .4s ease-in-out; }
   .all-logotype {
@@ -61,37 +67,31 @@
   .all-logotype {
     background:     var(--grd-01);
     box-shadow:     var(--shd-01);
-    width: 0;
+    width:          0;
     max-width:      fit-content;
-    min-height:   74px;
+    min-height:     64px;
+    height:         64px;
     position:       absolute;
     gap:            var(--siz-07);
     top:            var(--siz-08);
-    padding: 0;
+    left:     5px;
+    padding:        0;
     border-right:   var(--brd-01);
     border-left:    var(--brd-01);
     border-top:     var(--brd-02);
     border-bottom:  var(--brd-02);
     border-radius:  12px;
     z-index:        99;
-    overflow: hidden;
-    animation: ani-logotype-01 .6s var(--cubic-easeInOutQuad) forwards;
-  }
-  .all-logotype::before {
-    --wid-01: ;
-    content: '';
-    position: absolute;
-    top: 4px;
-    left: calc(50% - 80% / 2);
-    width: 80%;
-    height: 2px;
-    background: linear-gradient(
-      32deg, var(--clr-main-500), var(--clr-second-500)
-    );
+    overflow:       hidden;
+    opacity:        .2;
+    translate: 0 -200% 0;
+    animation: ani-logotype-01 1s .2s var(--cubic-easeInOutQuad) forwards;
   }
   .logo-container {
     width:         var(--siz-03);
+    min-width:     var(--siz-03);
     height:        var(--siz-03);
+    min-height:    var(--siz-03);
     border-radius: 50%;
   }
   .types {
@@ -120,6 +120,8 @@
       --siz-05: 1.72rem;
       --siz-01: 14.4px;
       --siz-02: 3.2px;
+      left:     10px;
+    height:     72px;
     }
   }
   @media screen and (min-width: 424px) {
@@ -130,6 +132,7 @@
       --siz-01: 16px;
       --siz-02: 4px;
       left:     16px;
+      height:         80px;
     }
   }
 </style>

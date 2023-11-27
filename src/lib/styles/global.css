@@ -15,6 +15,18 @@
   --cubic-easeInCubic: cubic-bezier(0.32, 0, 0.67, 0);
   --cubic-easeOutCubic: cubic-bezier(0.33, 1, 0.68, 1);
   --cubic-easeInOutCubic: cubic-bezier(0.65, 0, 0.35, 1);
+  --cubic-easeInQuart: cubic-bezier(0.5, 0, 0.75, 0);
+  --cubic-easeOutQuart: cubic-bezier(0.25, 1, 0.5, 1);
+  --cubic-easeInOutQuart: cubic-bezier(0.76, 0, 0.24, 1);
+  --cubic-easeInQuint: cubic-bezier(0.64, 0, 0.78, 0);
+  --cubic-easeOutQuint: cubic-bezier(0.22, 1, 0.36, 1);
+  --cubic-easeInOutQuint: cubic-bezier(0.83, 0, 0.17, 1);
+  --cubic-easeInExpo: cubic-bezier(0.7, 0, 0.84, 0);
+  --cubic-easeOutExpo: cubic-bezier(0.16, 1, 0.3, 1);
+  --cubic-easeInOutExpo: cubic-bezier(0.87, 0, 0.13, 1);
+  --cubic-easeInCirc: cubic-bezier(0.55, 0, 1, 0.45);
+  --cubic-easeOutCirc: cubic-bezier(0, 0.55, 0.45, 1);
+  --cubic-easeInOutCirc: cubic-bezier(0.85, 0, 0.15, 1);
   --cubic-easeInBack: cubic-bezier(0.36, 0, 0.66, -0.56);
   --cubic-easeOutBack: cubic-bezier(0.34, 1.56, 0.64, 1);
   --cubic-easeInOutBack: cubic-bezier(0.68, -0.6, 0.32, 1.6);
@@ -24,11 +36,6 @@
   --color-html-scroll-thumb: var(--clr-grey-875);
   --color-html-scroll-thumb-border: var(--clr-grey-600);
   --color-body-bg: var(--clr-grey-150);
-  /* --color-body-bg: linear-gradient(
-    32deg,
-    var(--clr-second-050) 50%,
-    var(--clr-main-075) 100%
-  ); */
   --color-body-color: var(--clr-grey-875);
 }
 
@@ -72,7 +79,7 @@ ul[class], ol[class] { list-style: none; }
 a:not([class]) { -webkit-text-decoration-skip: ink; text-decoration-skip-ink: auto; }
 a { text-decoration: none; display: block; }
 img { max-width: 100%; display: block; }
-span { display: inline-block;}
+span { display: inline;}
 input, button, textarea, select { font: inherit; margin: 0; padding: 0; border: none; }
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -85,7 +92,6 @@ input, button, textarea, select { font: inherit; margin: 0; padding: 0; border: 
     animation: none !important;
   }
 }
-
 
 .flex-center {
   display: flex;

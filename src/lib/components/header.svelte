@@ -17,6 +17,23 @@
 <div class="styled" />
 
 <style>
+  @keyframes detail-appear-header { 0% {
+    translate: 0 -100% 0;
+  } 100% {
+    translate: 0 0 0;
+  }}
+  @keyframes details-appear-nav {
+    0% {
+      border-left: 0px solid var(--clr-grey-875);
+      border-right: 0px solid var(--clr-grey-875);
+      width: 0px;
+    }
+    100% {
+      border-left: 64px solid var(--clr-grey-875);
+      border-right: 16px solid var(--clr-grey-500);
+      width: 200px;
+    }
+  }
   /* header {
     
   } */
@@ -36,11 +53,13 @@
     height:     32px;
     background: var(--clr-grey-875);
     z-index:    -2;
+    translate: 0 -100% 0;
+    animation: detail-appear-header .8s .16s var(--cubic-easeInSine) forwards;
   }
   .styled {
-    content: '';
+    content:    '';
     transition: all .4s ease-in-out;
-    position: absolute;
+    position:   absolute;
     left: 0; top: 0;
     border-left: 0px solid var(--clr-grey-875);
     border-right: 0px solid var(--clr-grey-875);
@@ -53,9 +72,7 @@
   }
   @media screen and (min-width: 792px) {
     .styled {
-      border-left: 64px solid var(--clr-grey-875);
-      border-right: 16px solid var(--clr-grey-500);
-      width: 200px;
+      animation: details-appear-nav .4s var(--cubic-easeInOutSine) forwards;
     }
   }
 </style>

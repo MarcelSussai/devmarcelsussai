@@ -3,22 +3,6 @@
   import { fly } from 'svelte/transition'
 
   export let data
-
-  // import { onNavigate } from '$app/navigation';
-
-  // onNavigate((navigation) => {
-  //   if (!document.startViewTransition) return;
-
-  //   return new Promise((resolve) => {
-  //     document.startViewTransition(async () => {
-  //       resolve();
-  //       await navigation.complete;
-  //     });
-  //   });
-  // });
-
-
-  
 </script>
 
 
@@ -44,7 +28,7 @@
     /* transition: all .4s ease-in-out; */
     z-index: 0;
     min-height: 100dvh;
-    padding: 88px 0 2048px 0;
+    padding: 96px 0 2048px 0;
     gap: 32px;
   }
   footer {
@@ -54,12 +38,12 @@
   }
   
   @media screen and (min-width: 375px) {
-    main { padding: 96px 0 2048px 0; }
-  }
-  @media screen and (min-width: 424px) {
     main { padding: 104px 0 2048px 0; }
   }
+  @media screen and (min-width: 424px) {
+    main { padding: 112px 0 2048px 0; }
+  }
   @media screen and (min-width: 792px) {
-    main { padding: 32px 16px 2048px 280px; }
+    main { padding: 40px 16px 2048px 280px; }
   }
 </style>

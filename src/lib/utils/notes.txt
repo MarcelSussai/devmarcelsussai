@@ -1,0 +1,55 @@
+<script>
+  import { onMount } from 'svelte';
+
+  let isVisible = false;
+
+  // Função para lidar com as mudanças na interseção
+  function handleIntersection(entries) {
+    entries.forEach(entry => {
+      // Verifica se o item está visível e se está abaixo na viewport
+      if (entry.isIntersecting && entry.intersectionRatio === 1 && entry.boundingClientRect.bottom > entry.rootBounds.bottom) {
+        isVisible = true;
+      } else {
+        isVisible = false;
+      }
+    });
+  }
+
+  // Use onMount para garantir que o código seja executado após o componente ser montado
+  onMount(() => {
+    // Cria uma instância de Intersection Observer
+    const observer = new IntersectionObserver(handleIntersection, {
+      root: null, // Utiliza o viewport como root
+      rootMargin: '0px', // Margem ao redor do root
+      threshold: 1.0 // 100% de interseção necessária
+    });
+
+    // Obtém a referência do elemento que você deseja observar
+    const target = document.querySelector('.item');
+
+    // Inicia a observação do elemento alvo
+    observer.observe(target);
+
+    // Lembre-se de desconectar o observador quando o componente for destruído
+    return () => {
+      observer.disconnect();
+    };
+  });
+</script>
+
+<style>
+  .item {
+    height: 100vh; /* ou qualquer altura desejada */
+    background-color: lightblue;
+  }
+</style>
+
+<div class="item">
+  <!-- Conteúdo do item -->
+</div>
+
+<p>A variável isVisible é {isVisible ? 'verdadeira' : 'falsa'}.</p>
+
+Neste exemplo, usei a função onMount para garantir que o código seja executado após o componente ser montado. Dentro dessa função, criei uma instância do IntersectionObserver e a configurei para chamar a função handleIntersection sempre que houver uma mudança na interseção. Em seguida, observei o elemento alvo (com a classe .item) usando o método observe. Não se esqueça de desconectar o observador quando o componente for destruído para evitar vazamentos de memória.
+
+Essa abordagem é mais manual do que usar uma biblioteca especializada como svelte-intersection-observer, mas lhe dá mais controle sobre o comportamento do observador de interseção.

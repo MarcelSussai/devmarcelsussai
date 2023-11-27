@@ -14,8 +14,8 @@
   const list_menu = [
     {name: 'Home',        link: '/',          icon: icon_home},
     {name: 'Portfólio',  link: '/portfolio', icon: icon_port},
-    {name: 'Habilidades', link: '/skills',    icon: icon_skills},
     {name: 'Sobre Mim',   link: '/aboutme',   icon: icon_aboutme},
+    {name: 'Habilidades', link: '/skills',    icon: icon_skills},
     {name: 'Artigos',     link: '/articles',  icon: icon_articles},
     {name: 'Contato',     link: '/contact',   icon: icon_contact},
   ]
@@ -49,6 +49,10 @@
 
 
 <style>
+  @keyframes appear-menu {
+    0% { translate: -110% 0 0; }
+    100% { translate: 0 0 0; }
+  }
   nav {
     --size-01: 8px;
     --size-02: 2px;
@@ -60,7 +64,7 @@
     --clr-06:  var(--clr-grey-800);
     --clr-07:  var(--clr-grey-075);
     --clr-08:  var(--clr-grey-850);
-    --trs-01:  all .4s var(--cubic-easeInOutCubic);
+    --trs-01:  all .5s var(--cubic-easeInOutSine);
     --trs-02:  all .3s var(--cubic-easeInOutCubic);
     --brd-01:  solid 8px var(--clr-01);
     --bg-01: linear-gradient(
@@ -179,7 +183,8 @@
 
   @media screen and (min-width: 792px) {
     nav {
-      --trlt-01: unset;
+      /* --trlt-01: unset; */
+      animation: appear-menu .5s .3s var(--cubic-easeInOutSine) forwards;
     }
     nav.open {
       --trlt-01: unset;
