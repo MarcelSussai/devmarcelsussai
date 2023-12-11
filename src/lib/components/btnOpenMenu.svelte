@@ -14,7 +14,7 @@
     aria-label="menu"
     on:click={hand_is_open_tog}
   >
-    <div class="bars { class_bars_open }"></div>
+    <div class={`bars ${class_bars_open}`}></div>
   </button>
 </div>
 
@@ -44,7 +44,7 @@
     background:       var(--bg-01);
     position:         fixed;
     right:            0px;
-    bottom:           24px;
+    bottom:           8px;
     width:            80px;
     height:           64px;
     padding:          var(--pad-01);
@@ -79,9 +79,7 @@
     transition:     var(--trs-02);
     box-shadow:     var(--shd-01);
   }
-  .btn-menu:hover {
-    background: var(--clr-grey-925);
-  }
+  .btn-menu:hover { background: var(--clr-grey-925); }
   .bars {
     width:          24px;
     height:         3px;
@@ -90,9 +88,7 @@
     position:       relative;
     transition:     var(--trs-01);
   }
-  .bars.open {
-    background: transparent;
-  }
+  .bars.open { background: transparent; }
   .bars::before, .bars::after {
     content:          '';
     position:         absolute;
@@ -104,17 +100,9 @@
     transition:       var(--trs-01);
     transform-origin: center;
   }
-  .bars.open::before, .bars.open::after {
-    background: var(--clr-red-500);
-  }
-  .bars.open::before {
-    rotate:     45deg;
-    translate:  0px 8px;
-  }
-  .bars.open::after {
-    rotate:     -45deg;
-    translate:  0px -8px;
-  }
+  .bars.open::before, .bars.open::after { background: var(--clr-red-500); }
+  .bars.open::before { rotate: 45deg; translate: 0px 8px; }
+  .bars.open::after { rotate: -45deg; translate: 0px -8px; }
   .bars::before { top: -8px; }
   .bars::after { top: 8px; }
   @media screen and (min-width: 792px) {

@@ -1,0 +1,132 @@
+:root {
+  --bord-radi-01: 8px 0px;
+  /* - */
+  --linear-grad-01: linear-gradient( 32deg, var(--clr-main-700), var(--clr-second-700));
+  --linear-grad-02: linear-gradient( 32deg, var(--clr-main-300), var(--clr-second-300));
+  /* - */
+  --transition-01: all 1s var(--cubic-easeInOutSine);
+  /* - */
+  --font-size-base-01: 1.52rem;
+  --font-size-01: var(--font-size-base-01);
+  --font-size-01-detail: calc(var(--font-size-01) + .16rem);
+  /* - */
+  --font-size-base-02: 2.64rem;
+  --font-size-02: var(--font-size-base-02);
+  /* - */
+  --font-size-base-03: 1.50rem;
+  --font-size-03: var(--font-size-base-03);
+  /* - */
+  --font-size-base-04: 1.50rem;
+  --font-size-04: var(--font-size-base-04);
+  /* - */
+  --ft-siz-01: clamp();
+}
+@media screen {
+  @media (min-width: 375px) { :root {
+    --font-size-01: calc(var(--font-size-base-01) + .24rem);
+    --font-size-02: calc(var(--font-size-base-02) + .24rem);
+    --font-size-03: calc(var(--font-size-base-03) + .24rem);
+  }}
+  @media (min-width: 424px) { :root {
+    --font-size-01: calc(var(--font-size-base-01) + .40rem);
+    --font-size-02: calc(var(--font-size-base-02) + .40rem);
+    --font-size-03: calc(var(--font-size-base-03) + .40rem);
+  }}
+  @media (min-width: 480px) { :root {
+    --font-size-01: calc(var(--font-size-base-01) + .64rem);
+    --font-size-02: calc(var(--font-size-base-02) + .64rem);
+    --font-size-03: calc(var(--font-size-base-03) + .64rem);
+  }}
+  @media (min-width: 792px) { .root {
+    --font-size-01: calc(var(--font-size-base-01) + .72rem);
+    --font-size-02: calc(var(--font-size-base-02) + .72rem);
+    --font-size-03: calc(var(--font-size-base-03) + .72rem);
+  }}
+  @media (min-width: 1024px) { .root {
+    --font-size-01: calc(var(--font-size-base-01) + .96rem);
+    --font-size-02: calc(var(--font-size-base-02) + .96rem);
+    --font-size-03: calc(var(--font-size-base-03) + .96rem);
+  }}
+  @media (min-width: 1360px) { .root {
+    --font-size-01: calc(var(--font-size-base-01) + 1.04rem);
+    --font-size-02: calc(var(--font-size-base-02) + 1.04rem);
+    --font-size-03: calc(var(--font-size-base-03) + 1.04rem);
+  }}
+}
+
+
+.flex-center        { display: flex; justify-content: center; align-items: center; }
+.flex-column        { display: flex; flex-flow: column; }
+.flex-column-center { display: flex; flex-flow: column;     align-items: center; }
+.flex-row-nowrap    { display: flex; flex-flow: row nowrap; align-items: center; }
+.flex-row-wrap      { display: flex; flex-flow: row wrap;   align-items: center; }
+
+.bord-01 {
+  --bord-size:    2px;
+  --bord-tl:      solid var(--bord-size) var(--clr-grey-075);
+  --bord-br:      solid var(--bord-size) var(--clr-grey-200);
+  border-top:     var(--bord-tl);
+  border-left:    var(--bord-tl);
+  border-bottom:  var(--bord-br);
+  border-right:   var(--bord-br);
+  border-radius:  var(--bord-radi-01);
+}
+
+
+.grad-bold-01 {
+  background-image:         var(--linear-grad-01);
+  background-clip:          text;
+  -webkit-background-clip:  text;
+  background-size:          100%;
+  -webkit-text-fill-color:  transparent;
+  font-size:                var(--font-size-01-detail);
+  font-weight:              900;
+}
+.grad-bold-02 {
+  background-image:         var(--linear-grad-02);
+  background-clip:          text;
+  -webkit-background-clip:  text;
+  background-size:          100%;
+  -webkit-text-fill-color:  transparent;
+}
+
+
+.purple-bold-01 {
+  color:        var(--clr-purple-500);
+  font-weight:  900;
+  font-size:    var(--font-size-01-detail);
+}
+
+
+
+.main-text {
+  --margin:     0px 8px;
+  --padding:    12px;
+  padding:      var(--padding);
+  margin:       var(--margin);
+  background:   var(--clr-grey-150);
+  font-size:    var(--font-size-01);
+  line-height:  1.6;
+  text-align:   start;
+  font-weight:  300;
+  text-wrap:    pretty;
+  translate:    var(--trs, 0 0 0);
+  opacity:      var(--opc, 1);
+  transition:   all .8s var(--cubic-easeInOutSine);
+  width: calc(100% - 16px);
+}
+@media screen and (min-width: 792px)  { .main-text { --margin: unset; width: 100%; } }
+
+.basic-title {
+  padding:        8px;
+  text-align:     center;
+  justify-self:   center;
+  background:     var(--clr-grey-825);
+  color:          var(--clr-gold-050);
+  font-size:      clamp(2.4rem, 2.4rem + 1dvw, 3.2rem);
+  font-weight:    900;
+  line-height:    1.48;
+  border-radius:  32px 0;
+}
+@media screen and (min-width: 792px) { .basic-title { width: 100%; }}
+

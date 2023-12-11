@@ -56,23 +56,23 @@
     --trs-01: all .4s ease-in-out;
   }
   .all-marquee {
-    width: var(--marquee-x);
-    height: var(--siz-01);
-    border-left: var(--brd-01);
-    border-right: var(--brd-01);
-    border-top: var(--brd-02);
-    border-bottom: var(--brd-02);
-    background: var(--clr-grey-025-03);
-    z-index: 2;
-    backdrop-filter: blur(2px);
-    position: absolute;
-    top: var(--top-01);
-    box-shadow: var(--shd-01);
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-    transition: var(--trs-01);
-    text-shadow:var(--shd-02);
+    width:            var(--marquee-x);
+    height:           var(--siz-01);
+    border-left:      var(--brd-01);
+    border-right:     var(--brd-01);
+    border-top:       var(--brd-02);
+    border-bottom:    var(--brd-02);
+    background:       var(--clr-grey-025-03);
+    z-index:          2;
+    backdrop-filter:  blur(2px);
+    position:         absolute;
+    top:              var(--top-01);
+    box-shadow:       var(--shd-01);
+    display:          flex;
+    align-items:      center;
+    overflow:         hidden;
+    transition:       var(--trs-01);
+    text-shadow:      var(--shd-02);
   }
   .marquee {
     width: fit-content;
@@ -121,5 +121,9 @@
       max-width: 520px;
       --top-01: calc(50% + 5px);
     }
+  }
+  @media screen and (min-width: 1800px) {
+    .all-marquee {max-width: 552px; }
+    :root { --marquee-x: 552px; }
   }
 </style>

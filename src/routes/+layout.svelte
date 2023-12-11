@@ -1,6 +1,6 @@
 <script lang='ts'>
-  import Header from '$components/header.svelte';
   import { fly } from 'svelte/transition'
+  import Header from '$components/header.svelte'
 
   export let data
 </script>
@@ -23,12 +23,12 @@
 </footer>
 
 <style>
-
   main {
     /* transition: all .4s ease-in-out; */
+    --pd-bottom: 64px;
     z-index: 0;
     min-height: 100dvh;
-    padding: 96px 0 2048px 0;
+    padding: 96px 0 var(--pd-bottom) 0;
     gap: 32px;
   }
   footer {
@@ -37,13 +37,13 @@
     background: var(--clr-grey-875);
   }
   
-  @media screen and (min-width: 375px) {
-    main { padding: 104px 0 2048px 0; }
-  }
-  @media screen and (min-width: 424px) {
-    main { padding: 112px 0 2048px 0; }
-  }
-  @media screen and (min-width: 792px) {
-    main { padding: 40px 16px 2048px 280px; }
-  }
+  @media screen and (min-width: 375px) { main { padding: 104px 0 var(--pd-bottom) 0; } }
+  @media screen and (min-width: 424px) { main { padding: 112px 0 var(--pd-bottom) 0; } }
+  @media screen and (min-width: 792px) { main { padding: 112px 16px var(--pd-bottom) 288px; } }
+  @media screen and (min-width: 1800px) { main {
+    --max-increment: 216px;
+    --pad-right: calc(16px + var(--max-increment));
+    --pad-left: calc(280px + var(--max-increment));
+    padding: 64px var(--pad-right) var(--pd-bottom) var(--pad-left);
+  }}
 </style>

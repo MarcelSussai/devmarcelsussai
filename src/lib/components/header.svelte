@@ -29,7 +29,7 @@
       width: 0px;
     }
     100% {
-      border-left: 64px solid var(--clr-grey-875);
+      border-left: 16px solid var(--clr-grey-875);
       border-right: 16px solid var(--clr-grey-500);
       width: 200px;
     }
@@ -50,7 +50,7 @@
     position:   absolute;
     top:        0;
     width:      100%;
-    height:     32px;
+    height:     56px;
     background: var(--clr-grey-875);
     z-index:    -2;
     translate: 0 -100% 0;
@@ -67,7 +67,7 @@
     height: 100%;
     z-index: 8;
     background: linear-gradient(
-      90deg, var(--clr-main-250), var(--clr-second-250)
+      90deg, var(--clr-main-200), var(--clr-second-200)
     );
   }
   @media screen and (min-width: 792px) {

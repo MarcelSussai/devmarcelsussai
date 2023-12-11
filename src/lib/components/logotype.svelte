@@ -25,30 +25,27 @@
 
 <style>
   @keyframes ani-logotype-01 { 0% {
-    width: 0%;
-    padding: 0;
-    opacity: .2;
-    translate: 0 -200% 0;
-  } 32% {
-    translate: 0 0 0;
+    width:      0%;
+    padding:    0;
+    translate:  0 -120% 0;
+  } 40% {
+    padding:    0;
+    width:      0%;
+    translate:  0 0 0;
   } 100% {
-    width: 100%;
-    padding:        8px 10px 8px 8px;
-    opacity: 1;
-    translate: 0 0 0;
+    width:      100%;
+    padding:    8px 10px 8px 8px;
+    translate:  0 0 0;
   } }
   .transiiton-item { transition: all .4s ease-in-out; }
   .all-logotype {
     --siz-01: 12px;
-    --siz-02: 2px;
+    --siz-02: 1px;
     --siz-03: 48.8px;
     --siz-04: 3.12rem;
     --siz-05: 1.496rem;
-    --siz-06: 4px;
-    --siz-07: 6px;
-    --siz-08: 16px;
     --brd-01: solid var(--siz-01) var(--clr-grey-975);
-    --brd-02: solid var(--siz-02) var(--clr-grey-975);
+    --brd-02: solid var(--siz-02) var(--clr-grey-800);
     --grd-01: linear-gradient(
       24deg,
       var(--clr-grey-900) 32%,
@@ -72,20 +69,20 @@
     min-height:     64px;
     height:         64px;
     position:       absolute;
-    gap:            var(--siz-07);
-    top:            var(--siz-08);
-    left:     5px;
+    gap:            6px;
+    top:            16px;
+    left:           5px;
     padding:        0;
     border-right:   var(--brd-01);
     border-left:    var(--brd-01);
     border-top:     var(--brd-02);
     border-bottom:  var(--brd-02);
-    border-radius:  12px;
+    border-radius:  12px 12px 12px 0px;
     z-index:        99;
     overflow:       hidden;
-    opacity:        .2;
-    translate: 0 -200% 0;
-    animation: ani-logotype-01 1s .2s var(--cubic-easeInOutQuad) forwards;
+    /* opacity:        .2; */
+    translate:      0 -200% 0;
+    animation: ani-logotype-01 1.6s .1s var(--cubic-easeInOutQuad) forwards;
   }
   .logo-container {
     width:         var(--siz-03);
@@ -103,7 +100,7 @@
     font-family:  var(--font-logo);
     font-weight:  900;
     font-size:    var(--siz-04);
-    gap:          var(--siz-06);
+    gap:          4px;
   }
   .marcel { color: var(--clr-main-500); }
   .sussai { color: var(--clr-second-500); }
@@ -119,9 +116,9 @@
       --siz-04: 3.6rem;
       --siz-05: 1.72rem;
       --siz-01: 14.4px;
-      --siz-02: 3.2px;
+      /* --siz-02: 3.2px; */
       left:     10px;
-    height:     72px;
+      height:     72px;
     }
   }
   @media screen and (min-width: 424px) {
@@ -130,9 +127,19 @@
       --siz-04: 4rem;
       --siz-05: 1.904rem;
       --siz-01: 16px;
-      --siz-02: 4px;
+      /* --siz-02: 4px; */
       left:     16px;
-      height:         80px;
+      height:   80px;
+    }
+  }
+  @media screen and (min-width: 1800px) {
+    .all-logotype {
+      --siz-01: 24px;
+      /* --siz-02: 4.8px; */
+      --siz-03: 72px;
+      --siz-04: 4.8rem;
+      --siz-05: 2.28rem;
+      height:   96px;
     }
   }
 </style>

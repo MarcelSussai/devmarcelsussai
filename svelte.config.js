@@ -19,7 +19,7 @@ const config = {
       '$stores': 'src/lib/stores/',
       '$stores/*': 'src/lib/stores/',
       '$utils': 'src/lib/utils/',
-      // '$utils/*': 'src/lib/utils/',
+      '$utils/*': 'src/lib/utils/',
       '$theme-scheme': 'src/lib/utils/theme_scheme/',
     },
 		adapter: adapter()

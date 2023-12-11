@@ -174,4 +174,7 @@
       --brd-02: dashed 16px var(--clr-01);
     }
   }
+  @media screen and (min-width: 1800px) {
+    .all-globe {--siz-01: 600px;}
+  }
 </style>
