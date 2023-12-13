@@ -3,18 +3,78 @@
 
 
 
-  
-
+  export let img: string = '/'
+  export let img_label: string = 'Uma imagem desconhecida não categorizada'
+  export let text: string = 'Texto não fornecido'
+  export let links: string[] = [''] 
 </script>
 
 
 
-<article>
-  
+<article class="bord-01 flex-column-center">
+  <figure class="">
+    <img src={img} alt={img_label}>
+    <figcaption>{img_label}</figcaption>
+  </figure>
+  <p class="main-text">{text}</p>
+  {#each links as link}
+    <a href={link} target="_blank">{link}</a>
+  {/each}
 </article>
 
 
 
 <style>
-  
+  article {
+    background: var(--clr-grey-150);
+    gap: 8px;
+    padding: 16px;
+    width: calc(100% - 32px);
+  }
+  @media screen and (min-width: 375px) {article {width: calc(100% - 16px);}}
+  @media screen and (min-width: 792px) {article {width: 100%;}}
+  figure {
+    padding: 12px 12px 8px 12px;
+    /* margin: 8px 8px 0 8px; */
+    border: solid 1px var(--clr-grey-300);
+    background: var(--clr-grey-100);
+    overflow: hidden;
+    border-radius: 8px 0;
+    /* width: 100%; */
+  }
+  img {
+    max-height: 256px;
+  }
+  p {
+    padding: 0;
+    margin: 0;
+  }
+  @media screen and (min-width: 792px) {p {padding: 8px;}}
+  figcaption {
+    padding: 8px 0 0 0;
+    font-size: clamp(1.2rem, 1.4rem + .1dvw, 2rem);
+  }
+  a {
+    width: calc(100% - 16px);
+    padding: 8px 32px 8px 16px;
+    background: var(--clr-grey-050);
+    border: solid 1px var(--clr-grey-100);
+    border-radius: 12px 0;
+    color: var(--clr-grey-750);
+    font-weight: 900;
+    line-height: 1;
+    display: flex; flex-flow: row nowrap;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+  }
+  a::after {
+    content: '🡽';
+    padding: 0 8px 0 8px;
+    line-height: 1;
+    position: absolute;
+    right: 0px;
+    background: var(--clr-grey-050);
+    height: calc(100% - 16px);
+  }
 </style>
