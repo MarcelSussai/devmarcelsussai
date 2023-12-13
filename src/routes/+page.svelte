@@ -25,14 +25,14 @@
   {#if init_all}
     <div
       class="globe flex-center"
-      in:appear_open={{ duration: 1000, delay: 300 }}
+      in:appear_open={{ duration: 600, delay: 300 }}
     > <Globe /> </div>
   {/if}
   <HomeMarquee />
 </section>
 
 {#if init_all}
-  <h2 class="hello flex-center bord-01" in:blur={{duration: 1200, delay: 600}} > Olá, seja bem vind@ </h2>
+  <h2 class="hello flex-center bord-01" in:blur={{duration: 600, delay: 600}} > Olá, seja bem vind@ </h2>
 {/if}
 
 
@@ -41,7 +41,7 @@
   {#if percent < number}
     <div class="bf-scroll" transition:blur={{duration: 464}}>🡳</div>
   {/if}
-  <section class="anime-01" style={anime_01(percent >= number) + ' --vel: 1.2s;'}>
+  <section class="anime-01" style={anime_01(percent >= number) + ' --vel: .8s;'}>
     <p class="main-text bord-01">
       Sou programador e <span class="grad-bold-01">desenvolvedor web fullstack,
       especialista em front-end</span>, com bons conhecimentos em back-end,
@@ -88,7 +88,7 @@
       </p>
     </ViewportIo>
     <article>
-      <ul class="flex-column-center">
+      <ol class="flex-column-center">
         <ViewportIo let:percent><li class="anime-01" style={anime_01(percent >= 96)}>
           Trabalhar em uma empresa que valoriza o trabalho feito, e que eu possa trabalhar totalmente remoto.
         </li></ViewportIo>
@@ -110,7 +110,7 @@
         <ViewportIo let:percent><li class="anime-01" style={anime_01(percent >= 96)}>
           Evoluir sempre como profissional e como pessoa desenvolvedora, não apenas técnicamente e com conhecimentos de especialista, mas de forma geral também, para integrar mais avanço e tecnologia aos projetos que trabalho.
         </li></ViewportIo>
-      </ul>
+      </ol>
     </article>
   </div>
   <div class="content-points bord-01">
@@ -119,7 +119,7 @@
       O poder de ser autodidata
     </h2></ViewportIo>
     <ViewportIo let:percent>
-      <p class="main-text explain-text anime-01" style={anime_01(percent >= 32) + ' --vel: 1s;'}>
+      <p class="main-text explain-text anime-01" style={anime_01(percent >= 32) + ' --vel: .6s;'}>
         Autodidata <span class="grad-bold-01">não é apenas aprender sozinho</span>, é ser curioso e aprender com tudo que estiver a disposição, dito isso, também é aprender com a experiência alheia, com a vasta informação disponível na internet, com experimentações próprias, com cursos, com documentações, com os próprios erros, etc. Ainda mais nessa área de tecnologia, onde tudo evolui muito rápido, e para acompanhar isso de maneira satisfatória é preciso ser autodidata. A vontade, o gostar e a curiosidade em aprender sempre mais e da melhor forma, é uma característa de ser autodidata que apesar das óbvias dificuldades, me faz superar desafios e encontrar melhores soluções para as necessidades apresentadas. <span class="grad-bold-01">Não é preciso saber tudo, mas saber como aprender a resolver tudo que precisar</span>, encontrando a melhor solução.
       </p>
     </ViewportIo>
@@ -211,8 +211,8 @@
     padding: 0 8px;
     background: var(--clr-grey-150);
   }
-  ul { gap: 8px;}
-  ul, li {list-style-type: square; width: 100%; list-style-position: inside;}
+  ol { gap: 8px;}
+  ol, li {list-style-type: square; width: 100%; list-style-position: inside;}
   li::marker { content: '❖ '; color: var(--clr-purple-500); font-weight: 500; }
   li {
     font-size: clamp(1.40rem, 1.40rem + .1dvw, 2rem);

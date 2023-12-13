@@ -127,12 +127,12 @@
   font-weight:    900;
   line-height:    1.48;
   border-radius:  32px 0;
+  width: 100%;
 }
-@media screen and (min-width: 792px) { .basic-title { width: 100%; }}
 
 
 .anime-01 {
   translate: var(--trs);
   opacity: var(--opc);
-  transition: all var(--vel, .6s) var(--delay, 0s) var(--cubic-easeInOutSine);
+  transition: all var(--vel, .4s) var(--delay, 0s) var(--cubic-easeInOutSine);
 }
