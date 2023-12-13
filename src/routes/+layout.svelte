@@ -1,5 +1,6 @@
 <script lang='ts'>
   import { fly } from 'svelte/transition'
+	import Footer from '$components/footer.svelte'
   import Header from '$components/header.svelte'
 
   export let data
@@ -18,23 +19,15 @@
   </main>
 {/key}
 
-<footer>
-  test
-</footer>
+<Footer />
 
 <style>
   main {
-    /* transition: all .4s ease-in-out; */
     --pd-bottom: 64px;
     z-index: 0;
     min-height: 100dvh;
     padding: 96px 0 var(--pd-bottom) 0;
     gap: 32px;
-  }
-  footer {
-    width: 100dvw;
-    min-height: 248px;
-    background: var(--clr-grey-875);
   }
   
   @media screen and (min-width: 375px) { main { padding: 104px 0 var(--pd-bottom) 0; } }

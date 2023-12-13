@@ -4,21 +4,16 @@
 	import PossibleItem from '$components/possibleItem.svelte'
   import Globe from '$components/globe.svelte'
   import HomeMarquee from '$components/homeMarquee.svelte'
-  import { appear_open } from '$utils/animations'
+  import { anime_01, appear_open } from '$utils/animations'
   import ViewportIo from '$components/viewportIO.svelte'
   import PageTitle from '$components/pageTitle.svelte'
-  import IconSites from '$components/iconSites.svelte'
+  import icon_contact from '$lib/assets/icon_contact.svg'
+  import icon_home from '$lib/assets/icon_home.svg'
 
-  /*
-  TODO: falar sobre ser autodidata, trabalho remoto e CTA para contato!
-
-  TODO: portifólio
-  */
 
   let init_all = false
   onMount(() => init_all = true)
 
-  const anime_01 = (in_view: boolean) => in_view ? '--trs: 0 0 0; --opc: 1;' : '--trs: 0 80% 0; --opc: 0;'
 
 </script>
 
@@ -65,7 +60,7 @@
 </ViewportIo>
 
 <ViewportIo width="100%" let:percent>
-  <PageTitle appear={percent >= 80 }>
+  <PageTitle appear={percent >= 80 } image={icon_home}>
     Como desenvolvedor fullstack <span class="bold">posso fazer o projeto todo</span> se necessário, <span class="bold">mas sou especialista front-end!</span>
   </PageTitle>
 </ViewportIo>
@@ -129,11 +124,19 @@
       </p>
     </ViewportIo>
   </div>
-  <ViewportIo let:percent>
-    <p class="main-text bord-01 anime-01" style={anime_01(percent >= 100)}>
-      Explore este site e descubra mais sobre mim, ou entre em contato para podermos conversar sobre sua necessidade digital!
-    </p>
-  </ViewportIo>
+  <article class="cta-contact bord-01 flex-column-center">
+    <ViewportIo let:percent>
+      <p class="main-text anime-01" style={anime_01(percent >= 100)}>
+        <span class="grad-bold-01">Explore este site</span> e descubra mais sobre mim, ou entre em contato para podermos conversar sobre sua necessidade digital!
+      </p>
+    </ViewportIo>
+    <ViewportIo let:percent>
+      <a href="/contact" class="contact-btn flex-center anime-01" style={anime_01(percent >= 100)}>
+        <img src={icon_contact} alt="Envelope simbolizando contato" class="img">
+        Contato
+      </a>
+    </ViewportIo>
+  </article>
 </section>
 
 <style>
@@ -210,7 +213,7 @@
   }
   ul { gap: 8px;}
   ul, li {list-style-type: square; width: 100%; list-style-position: inside;}
-  li::marker { content: '● '; color: var(--clr-purple-500); font-weight: 900; }
+  li::marker { content: '❖ '; color: var(--clr-purple-500); font-weight: 500; }
   li {
     font-size: clamp(1.40rem, 1.40rem + .1dvw, 2rem);
     font-weight: 300;
@@ -222,11 +225,6 @@
   .explain-text {
     margin: 0;
   }
-  .anime-01 {
-    translate: var(--trs);
-    opacity: var(--opc);
-    transition: all var(--vel, .6s) var(--delay, 0s) var(--cubic-easeInOutSine);
-  }
   @keyframes up-down {
     0% {translate: 0 -4px 0;}
     100% {translate: 0 4px 0;}
@@ -237,5 +235,35 @@
     font-size: 2.4rem;
     color: var(--clr-purple-500);
     animation: up-down .4s var(--cubic-easeInOutSine) alternate infinite;
+  }
+  .cta-contact {
+    width: calc(100% - 16px);
+    padding: 12px 8px 24px 8px;
+    gap: 8px;
+  }
+  @media screen and (min-width: 792px) {.cta-contact {width: 100%;}}
+  .contact-btn {
+    width: calc(100% - 32px);
+    padding: 6px 16px;
+    font-size: 2.24rem;
+    background: var(--clr-grey-800);
+    border-radius: 8px;
+    color: var(--clr-grey-025);
+    font-weight: 300;
+    position: relative;
+    transition: all .4s var(--cubic-easeInOutSine);
+    gap: 4px;
+  }
+  .contact-btn:hover {
+    background: var(--clr-grey-875);
+  }
+  @media screen and (min-width: 792px) {.contact-btn {
+    width: fit-content;
+    padding: 6px 16px 6px 52px;
+  }}
+  .img {
+    width: 24px;
+    position: absolute;
+    left: 16px;
   }
 </style>

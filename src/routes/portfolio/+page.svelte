@@ -1,18 +1,25 @@
 <script lang='ts'>
-  import PageTitle from '$components/pageTitle.svelte';
-import Test01 from './../../lib/components/ideas_test/test01.svelte'
+  import PageTitle from '$components/pageTitle.svelte'
+  import icon_port from '$lib/assets/icon_port.svg'
   
+  /*
+  TODO: portifólio
+  */
 
 </script>
 
 
 <div class="styled-01"> </div>
 <section class="teste">
-  <PageTitle appear={true}><span class="bold">Portfólio</span></PageTitle>
+  <PageTitle appear={true} image={icon_port}><span class="bold">Portfólio</span></PageTitle>
 </section>
-<p class="main-text">
-  teste
+<p class="main-text bord-01">
+  Alguns dos <span class="grad-bold-01">ultimos</span>  projetos trabalhados que posso compartilhar ...
 </p>
+<section class="projects">
+  
+</section>
+
 
 <style>
   .teste {

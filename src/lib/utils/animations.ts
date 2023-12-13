@@ -33,3 +33,5 @@ export function appear_open(node: HTMLElement, {
     }
   }
 }
+
+export const anime_01 = (in_view: boolean) => in_view ? '--trs: 0 0 0; --opc: 1;' : '--trs: 0 80% 0; --opc: 0;'

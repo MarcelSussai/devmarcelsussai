@@ -162,7 +162,7 @@
     transition:       var(--trs-02);
     position:         absolute;
     right:            calc(-22px - 48px);
-    border-radius:    24px;
+    border-radius:    32px;
     background:       var(--clr-08);
     display:          flex;
     justify-content:  center;

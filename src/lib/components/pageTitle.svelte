@@ -4,6 +4,7 @@
 
 
   export let appear: boolean = false
+  export let image: string = ''
 
 </script>
 
@@ -11,6 +12,9 @@
 
 <h1 style={ appear ? '--trs: 0 0 0; --opc: 1;' : '--trs: 0 200% 0; --opc: 0;' }>
   <slot></slot>
+  {#if image !== ''}
+    <img src={image} alt="">
+  {/if}
 </h1>
 
 
@@ -19,7 +23,7 @@
   h1 {
     --margin-01: 8px;
     --linhei-01: 1.3;
-    --paddng-01: 8px;
+    --paddng-01: 8px 8px 8px 32px;
     --sizbor-01: 8px;
     --sizbor-02: 2px;
     --bordlr-01: solid var(--sizbor-01) var(--clr-grey-800);
@@ -47,14 +51,28 @@
     translate:      var(--trs, 0 0 0);
     opacity:        var(--opc, 1);
     max-width:      var(--max-w, 100%);
+    position:       relative;
   }
   @media screen and (min-width: 480px)  { h1 { font-size: 3.44rem; }}
   @media screen and (min-width: 792px)  { h1 {
+    --margin-01: unset;
+    --paddng-01: 8px 16px 8px 64px;
     font-size: 3.44rem;
-    --margin-01: unset; }}
+  }}
   @media screen and (min-width: 1688px) { h1 { font-size: 4.8rem; }}
 
   h1 :global(.bold) { display: contents; font-weight: 900; }
+
+  h1 img {
+    position: absolute;
+    max-width: 12dvw;
+    border-radius: 0 800px 800px 0;
+    /* border-radius: 800px; */
+    left: -8px;
+    background: var(--clr-grey-800);
+    padding: 8px;
+  }
+  @media screen and (min-width: 480px) {h1 img {max-width: 48px;}}
 </style>
 
 
