@@ -47,6 +47,7 @@
   p {
     padding: 0;
     margin: 0;
+    font-size: clamp(1.56rem, 1.56rem + .2dvw, 2.4rem);
   }
   @media screen and (min-width: 792px) {p {padding: 8px;}}
   figcaption {
@@ -57,7 +58,7 @@
     width: calc(100% - 16px);
     padding: 8px 8px 8px 16px;
     background: var(--clr-grey-050);
-    border: solid 1px var(--clr-grey-100);
+    border: solid 1px var(--clr-grey-050);
     border-radius: 12px 0;
     color: var(--clr-grey-750);
     font-weight: 900;
@@ -66,7 +67,9 @@
     justify-content: space-between;
     position: relative;
     overflow: hidden;
+    transition: all .3s var(--cubic-easeInOutSine);
   }
+  a:hover {border: solid 1px var(--clr-grey-500); background: var(--clr-purple-025);}
   .icon {
     width: 16px;
     min-width: 16px;
