@@ -42,7 +42,7 @@
   {#if percent < number}
     <div class="bf-scroll" transition:blur={{duration: 464}}><IconArrowDown /></div>
   {/if}
-  <section class="anime-01" style={anime_01(percent >= number) + ' --vel: .8s;'}>
+  <section class="anime-01" style={anime_01(percent >= number) + ' --vel: .4s;'}>
     <p class="main-text bord-01">
       Sou programador e <span class="grad-bold-01">desenvolvedor web fullstack,
       especialista em front-end</span>, com bons conhecimentos em back-end,
@@ -60,7 +60,7 @@
   </section>
 </ViewportIo>
 
-<ViewportIo width="100%" let:percent>
+<ViewportIo let:percent>
   <PageTitle appear={percent >= 80 } image={icon_home}>
     Como desenvolvedor fullstack <span class="bold">posso fazer o projeto todo</span> se necessário, <span class="bold">mas sou especialista front-end!</span>
   </PageTitle>
@@ -89,28 +89,42 @@
       </p>
     </ViewportIo>
     <article>
-      <ol class="flex-column-center">
-        <ViewportIo let:percent><li class="anime-01" style={anime_01(percent >= 96)}>
-          Trabalhar em uma empresa que valoriza o trabalho feito, e que eu possa trabalhar totalmente remoto.
-        </li></ViewportIo>
-        <ViewportIo let:percent><li class="anime-01" style={anime_01(percent >= 96)}>
+      <ol class="flex-column-center ol-01">
+        <ViewportIo let:percent tag="li" classNames="li-01">
+          <span class="anime-01" style={anime_01(percent >= 96)}>
+            Trabalhar em uma empresa que valoriza o trabalho feito, e que eu possa trabalhar totalmente remoto.
+          </span>
+      </ViewportIo>
+        <ViewportIo let:percent tag="li" classNames="li-01">
+          <span class="anime-01" style={anime_01(percent >= 96)}>
           Quero dar uma vida melhor para minha familia e para mim mesmo com meu trabalho desenvolvendo softwares de qualidade que impactam de alguma forma o mundo!
-        </li></ViewportIo>
-        <ViewportIo let:percent><li class="anime-01" style={anime_01(percent >= 96)}>
+        </span>
+      </ViewportIo>
+        <ViewportIo let:percent tag="li" classNames="li-01">
+          <span class="anime-01" style={anime_01(percent >= 96)}>
           Poder aprender sempre mais, e com conhecimento atualizado poder compartilhar o que sei.
-        </li></ViewportIo>
-        <ViewportIo let:percent><li class="anime-01" style={anime_01(percent >= 96)}>
+        </span>
+      </ViewportIo>
+        <ViewportIo let:percent tag="li" classNames="li-01">
+          <span class="anime-01" style={anime_01(percent >= 96)}>
           Aprender outras linguagens de programação.
-        </li></ViewportIo>
-        <ViewportIo let:percent><li class="anime-01" style={anime_01(percent >= 96)}>
+        </span>
+      </ViewportIo>
+        <ViewportIo let:percent tag="li" classNames="li-01">
+          <span class="anime-01" style={anime_01(percent >= 96)}>
           Liderar o desenvolvimento front end de um projeto importante.
-        </li></ViewportIo>
-        <ViewportIo let:percent><li class="anime-01" style={anime_01(percent >= 96)}>
+        </span>
+      </ViewportIo>
+        <ViewportIo let:percent tag="li" classNames="li-01">
+          <span class="anime-01" style={anime_01(percent >= 96)}>
           Desenvolver uma solução lucrativa para um problema ou necessidade.
-        </li></ViewportIo>
-        <ViewportIo let:percent><li class="anime-01" style={anime_01(percent >= 96)}>
+        </span>
+      </ViewportIo>
+        <ViewportIo let:percent tag="li" classNames="li-01">
+          <span class="anime-01" style={anime_01(percent >= 96)}>
           Evoluir sempre como profissional e como pessoa desenvolvedora, não apenas técnicamente e com conhecimentos de especialista, mas de forma geral também, para integrar mais avanço e tecnologia aos projetos que trabalho.
-        </li></ViewportIo>
+        </span>
+      </ViewportIo>
       </ol>
     </article>
   </div>
@@ -213,16 +227,6 @@
     background: var(--clr-grey-150);
   }
   ol { gap: 8px;}
-  ol, li {list-style-type: square; width: 100%; list-style-position: inside;}
-  li::marker { content: '❖ '; color: var(--clr-purple-500); font-weight: 500; }
-  li {
-    font-size: clamp(1.40rem, 1.40rem + .1dvw, 2rem);
-    font-weight: 300;
-    transition: all .8s var(--cubic-easeInOutSine);
-    padding: 8px;
-  }
-  @media screen and (min-width: 375px) { li { font-size: clamp(1.64rem, 1.64rem + .2dvw, 2rem); }}
-  @media screen and (min-width: 792px) { li { font-size: clamp(1.80rem, 1.80rem + .2dvw, 2rem); }}
   .explain-text {
     margin: 0;
   }

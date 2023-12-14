@@ -6,8 +6,12 @@
   export let left   = 0
   export let right  = 0
   export let steps  = 100
-  export let width  = '100%'
-  export let height = '100%'
+  // export let width  = '100%'
+  // export let height = '100%'
+  export let tag    = 'div'
+  export let style  = ''
+  export let classNames  = ''
+  let classy = `flex-center ${classNames}`
 
   let element:                      HTMLElement
   let percent:                      number
@@ -53,9 +57,9 @@
 
 
 
-<div style={`--w: ${width}; --h: ${height}`} class="flex-center" bind:this={element}>
+<svelte:element this={tag} style={style} class={classy} bind:this={element}>
   <slot {percent} {unobserve} {intersectBottom}></slot>
-</div>
+</svelte:element>
 
 
 
