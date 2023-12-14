@@ -9,6 +9,7 @@
   import PageTitle from '$components/pageTitle.svelte'
   import icon_contact from '$lib/assets/icon_contact.svg'
   import icon_home from '$lib/assets/icon_home.svg'
+  import IconArrowDown from '$components/iconArrowDown.svelte';
 
 
   let init_all = false
@@ -25,21 +26,21 @@
   {#if init_all}
     <div
       class="globe flex-center"
-      in:appear_open={{ duration: 600, delay: 300 }}
+      in:appear_open={{ duration: 400, delay: 200 }}
     > <Globe /> </div>
   {/if}
   <HomeMarquee />
 </section>
 
 {#if init_all}
-  <h2 class="hello flex-center bord-01" in:blur={{duration: 600, delay: 600}} > Olá, seja bem vind@ </h2>
+  <h2 class="hello flex-center bord-01" in:blur={{duration: 400, delay: 200}} > Olá, seja bem vind@ </h2>
 {/if}
 
 
 <ViewportIo let:percent>
   {@const number = 20}
   {#if percent < number}
-    <div class="bf-scroll" transition:blur={{duration: 464}}>🡳</div>
+    <div class="bf-scroll" transition:blur={{duration: 464}}><IconArrowDown /></div>
   {/if}
   <section class="anime-01" style={anime_01(percent >= number) + ' --vel: .8s;'}>
     <p class="main-text bord-01">
@@ -232,8 +233,7 @@
   .bf-scroll {
     position: fixed;
     bottom: 16px;
-    font-size: 2.4rem;
-    color: var(--clr-purple-500);
+    width: 16px;
     animation: up-down .4s var(--cubic-easeInOutSine) alternate infinite;
   }
   .cta-contact {

@@ -1,4 +1,6 @@
 <script lang='ts'>
+  import IconTargetBlank from "./iconTargetBlank.svelte";
+
   
 
 
@@ -18,7 +20,8 @@
   </figure>
   <p class="main-text">{text}</p>
   {#each links as link}
-    <a href={link} target="_blank">{link}</a>
+    <a href={link} target="_blank">{link}
+    <div class="icon"><IconTargetBlank /></div></a>
   {/each}
 </article>
 
@@ -35,12 +38,8 @@
   @media screen and (min-width: 792px) {article {width: 100%;}}
   figure {
     padding: 12px 12px 8px 12px;
-    /* margin: 8px 8px 0 8px; */
-    border: solid 1px var(--clr-grey-300);
     background: var(--clr-grey-100);
     overflow: hidden;
-    border-radius: 8px 0;
-    /* width: 100%; */
   }
   img {
     max-height: 256px;
@@ -56,7 +55,7 @@
   }
   a {
     width: calc(100% - 16px);
-    padding: 8px 32px 8px 16px;
+    padding: 8px 8px 8px 16px;
     background: var(--clr-grey-050);
     border: solid 1px var(--clr-grey-100);
     border-radius: 12px 0;
@@ -68,13 +67,12 @@
     position: relative;
     overflow: hidden;
   }
-  a::after {
-    content: '🡽';
-    padding: 0 8px 0 8px;
-    line-height: 1;
-    position: absolute;
-    right: 0px;
+  .icon {
+    width: 16px;
+    min-width: 16px;
+    height: 16px;
+    min-height: 16px;
+    padding: 0px;
     background: var(--clr-grey-050);
-    height: calc(100% - 16px);
   }
 </style>

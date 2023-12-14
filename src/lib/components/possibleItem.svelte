@@ -53,7 +53,7 @@
     transform:        rotate3d(var(--rotate)) scale(var(--opc));
     opacity:          var(--opc);
     transform-style:  preserve-3d;
-    transition:       all .8s var(--cubic-easeInOutSine);
+    transition:       all .4s var(--cubic-easeInOutSine);
     padding: 0px 0px;
     background: var(--clr-grey-150);
     /* max-width: 344px; */
