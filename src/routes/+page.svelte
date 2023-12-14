@@ -33,14 +33,14 @@
 </section>
 
 {#if init_all}
-  <h2 class="hello flex-center bord-01" in:blur={{duration: 400, delay: 200}} > Olá, seja bem vind@ </h2>
+  <h2 class="hello flex-center bord-01" in:blur={{duration: 400, delay: 100}} > Olá, seja bem vind@ </h2>
 {/if}
 
 
 <ViewportIo let:percent>
   {@const number = 20}
   {#if percent < number}
-    <div class="bf-scroll" transition:blur={{duration: 464}}><IconArrowDown /></div>
+    <div class="bf-scroll" transition:blur={{duration: 200}}><IconArrowDown /></div>
   {/if}
   <section class="anime-01" style={anime_01(percent >= number) + ' --vel: .4s;'}>
     <p class="main-text bord-01">

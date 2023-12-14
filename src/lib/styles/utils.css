@@ -147,11 +147,13 @@
   transition: all .8s var(--cubic-easeInOutSine);
   padding: 8px;
 }
+.li-01 span {width: 100%;}
 .li-01 span::before {
   content: '❖';
   color: var(--clr-purple-500);
   font-weight: 500;
   margin: 0 8px;
+  width: 100%;
 }
 @media screen and (min-width: 375px) { .li-01 { font-size: clamp(1.64rem, 1.64rem + .2dvw, 2rem); }}
 @media screen and (min-width: 792px) { .li-01 { font-size: clamp(1.80rem, 1.80rem + .2dvw, 2rem); }}
