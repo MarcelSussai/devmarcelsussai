@@ -1,36 +1,33 @@
 <script lang='ts'>
   import { onMount } from 'svelte'
-  import { appear_open } from '$utils/animations'
+  import { anime_02 } from '$utils/animations'
 
 
 
 
 
-  let init_home_marquee = false
-  onMount(() => init_home_marquee = true)
+  let anime_home_marquee = anime_02(false)
+  onMount(() => anime_home_marquee = anime_02(true))
 
 </script>
 
-
-{#if init_home_marquee}
-  <div class="all-marquee" in:appear_open={{ delay: 600, }}>
-    <h2 class="marquee">
-      <span class="main">Explore </span> as possibilidades
-      <span class="second"> além dos limites! </span> Esteja
-      <span class="main"> conectado </span> com o
-      <span class="second"> mundo todo </span> e
-      <span class="main"> gere valor </span> da
-      <span class="second"> tecnologia!</span>
-    </h2>
-  </div>
-{/if}
+<div class="all-marquee anime-02" style={'--vel: .8s; --delay: .2s; ' + anime_home_marquee}>
+  <h2 class="marquee">
+    <span class="main">Explore </span> as possibilidades
+    <span class="second"> além dos limites! </span> Esteja
+    <span class="main"> conectado </span> com o
+    <span class="second"> mundo todo </span> e
+    <span class="main"> gere valor </span> da
+    <span class="second"> tecnologia!</span>
+  </h2>
+</div>
 
 
 
 
 <style>
   :root {
-    --marquee-x: calc(100dvw);
+    --marquee-x: calc(--w, 0%);
   }
   @keyframes marquee {
     0% { translate: var(--marquee-x) 0px 0px; }
@@ -38,7 +35,6 @@
   }
   .all-marquee {
     --shd-01: inset 0px 0px 12px 8px var(--clr-grey-025-04),
-              /* 0px 0px 10px 2px var(--clr-grey-825-01), */
               inset 0px 0px 4px 2px var(--clr-grey-800-01)
     ;
     --shd-02:
@@ -56,7 +52,7 @@
     --trs-01: all .4s ease-in-out;
   }
   .all-marquee {
-    width:            var(--marquee-x);
+    /* width:            var(--marquee-x); */
     height:           var(--siz-01);
     border-left:      var(--brd-01);
     border-right:     var(--brd-01);
@@ -71,7 +67,7 @@
     display:          flex;
     align-items:      center;
     overflow:         hidden;
-    transition:       var(--trs-01);
+    /* transition:       var(--trs-01); */
     text-shadow:      var(--shd-02);
   }
   .marquee {
@@ -86,12 +82,6 @@
   .main { color: var(--clr-main-800); }
   .second { color: var(--clr-second-850); }
 
-  /* @media screen and (min-width: 375px) {
-    .all-marquee { --top-01: calc(50% - 32px); }
-  }
-  @media screen and (min-width: 424px) {
-    .all-marquee { --top-01: calc(50% - 32px); }
-  } */
   @media screen and (min-width: 480px) {
     :root { --marquee-x: 480px; }
     .all-marquee {
@@ -102,7 +92,6 @@
       max-width: 480px;
     }
   }
-/*  */
   @media screen and (min-width: 792px) {
     :root { --marquee-x: 432px; }
     .all-marquee {

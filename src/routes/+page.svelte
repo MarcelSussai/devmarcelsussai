@@ -1,10 +1,10 @@
 <script lang="ts">
   import { onMount } from 'svelte'
-  import { blur, scale } from 'svelte/transition'
+  import { blur } from 'svelte/transition'
 	import PossibleItem from '$components/possibleItem.svelte'
   import Globe from '$components/globe.svelte'
   import HomeMarquee from '$components/homeMarquee.svelte'
-  import { anime_01, appear_open } from '$utils/animations'
+  import { anime_01, anime_02, anime_03, appear_open } from '$utils/animations'
   import ViewportIo from '$components/viewportIO.svelte'
   import PageTitle from '$components/pageTitle.svelte'
   import icon_contact from '$lib/assets/icon_contact.svg'
@@ -12,8 +12,12 @@
   import IconArrowDown from '$components/iconArrowDown.svelte';
 
 
-  let init_all = false
-  onMount(() => init_all = true)
+  let anime_globe = anime_02(false)
+  let anime_hello = anime_03(false)
+  onMount(() => {
+    anime_globe = anime_02(true)
+    anime_hello = anime_03(true)
+  })
 
 
 </script>
@@ -23,18 +27,12 @@
 </svelte:head>
 
 <section class="all-01 flex-column-center">
-  {#if init_all}
-    <div
-      class="globe flex-center"
-      in:appear_open={{ duration: 400, delay: 200 }}
-    > <Globe /> </div>
-  {/if}
+  <div class="globe flex-center anime-02" style={anime_globe}> <Globe /> </div>
   <HomeMarquee />
 </section>
 
-{#if init_all}
-  <h2 class="hello flex-center bord-01" in:blur={{duration: 400, delay: 100}} > Olá, seja bem vind@ </h2>
-{/if}
+
+<h2 class="hello flex-center bord-01 anime-03" style={'--vel: .8s;' + anime_hello} > Olá, seja bem vind@ </h2>
 
 
 <ViewportIo let:percent>
@@ -76,8 +74,6 @@
 
 <PossibleItem />
 
-
-
 <section class="all-03 flex-column-center">
   <div class="content-points bord-01">
     <ViewportIo let:percent><h2 class="basic-title anime-01" style={anime_01(percent >= 100)}>
@@ -97,33 +93,33 @@
       </ViewportIo>
         <ViewportIo let:percent tag="li" classNames="li-01">
           <span class="anime-01" style={anime_01(percent >= 96)}>
-          Quero dar uma vida melhor para minha familia e para mim mesmo com meu trabalho desenvolvendo softwares de qualidade que impactam de alguma forma o mundo!
-        </span>
+            Quero dar uma vida melhor para minha familia e para mim mesmo com meu trabalho desenvolvendo softwares de qualidade que impactam de alguma forma o mundo!
+          </span>
       </ViewportIo>
         <ViewportIo let:percent tag="li" classNames="li-01">
           <span class="anime-01" style={anime_01(percent >= 96)}>
-          Poder aprender sempre mais, e com conhecimento atualizado poder compartilhar o que sei.
-        </span>
+            Poder aprender sempre mais, e com conhecimento atualizado poder compartilhar o que sei.
+          </span>
       </ViewportIo>
         <ViewportIo let:percent tag="li" classNames="li-01">
           <span class="anime-01" style={anime_01(percent >= 96)}>
-          Aprender outras linguagens de programação.
-        </span>
+            Aprender outras linguagens de programação.
+          </span>
       </ViewportIo>
         <ViewportIo let:percent tag="li" classNames="li-01">
           <span class="anime-01" style={anime_01(percent >= 96)}>
-          Liderar o desenvolvimento front end de um projeto importante.
-        </span>
+            Liderar o desenvolvimento front end de um projeto importante.
+          </span>
       </ViewportIo>
         <ViewportIo let:percent tag="li" classNames="li-01">
           <span class="anime-01" style={anime_01(percent >= 96)}>
-          Desenvolver uma solução lucrativa para um problema ou necessidade.
-        </span>
+            Desenvolver uma solução lucrativa para um problema ou necessidade.
+          </span>
       </ViewportIo>
         <ViewportIo let:percent tag="li" classNames="li-01">
           <span class="anime-01" style={anime_01(percent >= 96)}>
-          Evoluir sempre como profissional e como pessoa desenvolvedora, não apenas técnicamente e com conhecimentos de especialista, mas de forma geral também, para integrar mais avanço e tecnologia aos projetos que trabalho.
-        </span>
+            Evoluir sempre como profissional e como pessoa desenvolvedora, não apenas técnicamente e com conhecimentos de especialista, mas de forma geral também, para integrar mais avanço e tecnologia aos projetos que trabalho.
+          </span>
       </ViewportIo>
       </ol>
     </article>
@@ -174,8 +170,10 @@
     width: 100%;
   }
   .globe {
-    width:          fit-content;
-    height:         fit-content;
+    /* width:          var(--w, 0%);
+    opacity:        var(--opc, 0);
+    transition: all .4s .2s var(--cubic-easeInOutSine); */
+    /* height:         fit-content; */
     overflow:       hidden;
     border-radius:  var(--rad-01, 50%);
     background:     var(--clr-grey-150);
@@ -207,7 +205,6 @@
     text-shadow:    var(--shd-01);
     line-height:    1;
     color:          var(--clr-grey-800);
-    transition:     all .4s var(--cubic-easeInBack);
     background:     var(--clr-grey-150);
     padding:        16px;
     width:          calc(100% - 16px);

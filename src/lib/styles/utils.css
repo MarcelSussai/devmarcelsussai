@@ -132,9 +132,18 @@
 
 
 .anime-01 {
-  translate: var(--trs);
-  opacity: var(--opc);
+  translate: var(--trs, 0 80% 0);
+  opacity: var(--opc, 0);
   transition: all var(--vel, .4s) var(--delay, 0s) var(--cubic-easeInOutSine);
+}
+.anime-02 {
+  width:          var(--w, 0%);
+  opacity:        var(--opc, 0);
+  transition: all var(--vel, .4s) var(--delay, .0s) var(--cubic-easeInOutSine);
+}
+.anime-03 {
+  filter: blur(var(--blur, 80px));
+  transition: all var(--vel, .4s) var(--delay, .0s) var(--cubic-easeInOutSine);
 }
 
 
