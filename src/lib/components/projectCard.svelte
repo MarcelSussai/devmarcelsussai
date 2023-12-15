@@ -15,7 +15,7 @@
 
 <article class="bord-01 flex-column-center">
   <figure class="">
-    <img src={img} alt={img_label}>
+    <img width="100%" height="100%" src={img} alt={img_label}>
     <figcaption>{img_label}</figcaption>
   </figure>
   <p class="main-text">{text}</p>
