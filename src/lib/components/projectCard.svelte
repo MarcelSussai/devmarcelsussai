@@ -8,7 +8,7 @@
   export let img: string = '/'
   export let img_label: string = 'Uma imagem desconhecida não categorizada'
   export let text: string = 'Texto não fornecido'
-  export let links: string[] = [''] 
+  export let links: string[] = ['']
 </script>
 
 

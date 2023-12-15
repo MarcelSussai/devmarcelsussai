@@ -11,7 +11,7 @@
 
 </script>
 
-<div class="test-cont anime-02 flex-center" style={anime_home_marquee + ' --delay: .3s;'}>
+<div class="test-cont anime-02 flex-center" style={anime_home_marquee + ' --delay: .4s;'}>
   <div class="all-marquee">
     <h2 class="marquee">
       <span class="main">Explore </span> as possibilidades

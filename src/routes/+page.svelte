@@ -17,6 +17,10 @@
   onMount(() => {
     anime_globe = anime_02(true)
     anime_hello = anime_03(true)
+    return () => {
+      anime_globe = anime_02(false)
+      anime_hello = anime_03(false)
+    }
   })
 
 
@@ -27,7 +31,7 @@
 </svelte:head>
 
 <section class="all-01 flex-column-center">
-  <div class="globe flex-center anime-02" style={anime_globe}> <Globe /> </div>
+  <div class="globe flex-center anime-02" style={anime_globe + ' --delay: .2s; '}> <Globe /> </div>
   <HomeMarquee />
 </section>
 

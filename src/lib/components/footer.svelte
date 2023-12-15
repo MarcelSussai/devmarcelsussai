@@ -42,7 +42,7 @@
     min-height: 256px;
     background: var(--clr-grey-875);
     color: var(--clr-grey-025);
-    padding: 12px 8px 22px 8px;
+    padding: 12px 8px 22px 16px;
     gap: 8px;
   }
   @media screen and (min-width: 792px) {.foo {padding: 12px 8px 12px 288px;}}
