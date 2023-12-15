@@ -11,15 +11,17 @@
 
 </script>
 
-<div class="all-marquee anime-02" style={'--vel: .8s; --delay: .2s; ' + anime_home_marquee}>
-  <h2 class="marquee">
-    <span class="main">Explore </span> as possibilidades
-    <span class="second"> além dos limites! </span> Esteja
-    <span class="main"> conectado </span> com o
-    <span class="second"> mundo todo </span> e
-    <span class="main"> gere valor </span> da
-    <span class="second"> tecnologia!</span>
-  </h2>
+<div class="test-cont anime-02 flex-center" style={anime_home_marquee + ' --delay: .3s;'}>
+  <div class="all-marquee">
+    <h2 class="marquee">
+      <span class="main">Explore </span> as possibilidades
+      <span class="second"> além dos limites! </span> Esteja
+      <span class="main"> conectado </span> com o
+      <span class="second"> mundo todo </span> e
+      <span class="main"> gere valor </span> da
+      <span class="second"> tecnologia!</span>
+    </h2>
+  </div>
 </div>
 
 
@@ -27,7 +29,13 @@
 
 <style>
   :root {
-    --marquee-x: calc(--w, 0%);
+    --marquee-x: calc(100dvw);
+  }
+  .test-cont {
+    --top-01: calc(50% - 32px);
+    position: absolute;
+    top:      var(--top-01);
+    z-index:  2;
   }
   @keyframes marquee {
     0% { translate: var(--marquee-x) 0px 0px; }
@@ -46,28 +54,24 @@
     --clr-01: var(--clr-grey-025);
     --brd-01: solid 30px var(--clr-01);
     --brd-02: solid 2px var(--clr-grey-100);
-    --top-01: calc(50% - 32px);
     --siz-01: 64px;
     --siz-02: 3.2rem;
     --trs-01: all .4s ease-in-out;
   }
   .all-marquee {
-    /* width:            var(--marquee-x); */
+    width:            var(--marquee-x);
     height:           var(--siz-01);
     border-left:      var(--brd-01);
     border-right:     var(--brd-01);
     border-top:       var(--brd-02);
     border-bottom:    var(--brd-02);
     background:       var(--clr-grey-025-03);
-    z-index:          2;
     backdrop-filter:  blur(2px);
-    position:         absolute;
-    top:              var(--top-01);
     box-shadow:       var(--shd-01);
     display:          flex;
     align-items:      center;
     overflow:         hidden;
-    /* transition:       var(--trs-01); */
+    transition:       var(--trs-01);
     text-shadow:      var(--shd-02);
   }
   .marquee {
@@ -84,25 +88,29 @@
 
   @media screen and (min-width: 480px) {
     :root { --marquee-x: 480px; }
+    .test-cont {
+      --top-01: calc(50% - 40px);
+    }
     .all-marquee {
       --siz-01: 80px;
       --siz-02: 4rem;
-      --top-01: calc(50% - 40px);
       --brd-01: solid 40px transparent;
       max-width: 480px;
     }
   }
   @media screen and (min-width: 792px) {
-    :root { --marquee-x: 432px; }
-    .all-marquee {
+    /* :root { --marquee-x: 432px; } */
+    .test-cont {
       --top-01: calc(50% + 4px);
+    }
+    .all-marquee {
       --brd-01: solid 16px transparent;
-      max-width: 432px;
+      /* max-width: 432px; */
     }
   }
   @media screen and (min-width: 1024px) {
-    :root { --marquee-x: 512px; }
-    .all-marquee { max-width: 512px; }
+    :root { --marquee-x: 520px; }
+    .all-marquee { max-width: 520px; }
 }
   @media screen and (min-width: 1360px) {
     :root { --marquee-x: 520px; }
