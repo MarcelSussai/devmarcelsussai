@@ -20,13 +20,13 @@
 <section class="projects flex-column-center">
   <ProjectCard
     img='/imgs_portfolio/midiacode.png'
-    img_label='um serviço gerador de qrcode para as mais diversas necessidades'
+    img_label='midiacode - um serviço gerador de qrcode para as mais diversas necessidades'
     text='Desenvolvi todo o gerador de qr-code usando react que seria inserido posteriormente no wordpress com elementor'
     links={['https://midiacode.com/']}
   />
   <ProjectCard
     img='/imgs_portfolio/meuvista.png'
-    img_label='Plataforma de planejamento financeiro'
+    img_label='meu vista - Plataforma de planejamento financeiro'
     text='Trabalhei durante um ano e meio com desenvolvimento front end em react, criando novas funcionalidades, corrigindo bugs, adaptando layouts, etc. Criei um bloco de notas para planejadores deixarem recados aos clientes, refatorei e melhorei o desempenho do projeto entre outras coisas. Criei uma POC(Prova de Conceito) para a refatoração do projeto para melhoria de usabilidade e implementei o whitelabel no projeto, também trabalhei com jira, com jenkins para deploys automatizados integrando na aws.'
     links={['https://meuvista.com/', 'https://app.meuvista.com/', 'https://refactor-experiment-vista-front.vercel.app/admin/home']}
   />

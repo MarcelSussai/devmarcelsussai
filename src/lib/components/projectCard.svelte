@@ -14,8 +14,8 @@
 
 
 <article class="bord-01 flex-column-center">
-  <figure class="">
-    <img width="100%" height="100%" src={img} alt={img_label}>
+  <figure class="flex-column-center">
+    <img height="100%" src={img} alt={img_label}>
     <figcaption>{img_label}</figcaption>
   </figure>
   <p class="main-text">{text}</p>
@@ -42,6 +42,8 @@
     overflow: hidden;
   }
   img {
+    width: fit-content;
+    height: fit-content;
     max-height: 256px;
   }
   p {
@@ -53,6 +55,7 @@
   figcaption {
     padding: 8px 0 0 0;
     font-size: clamp(1.2rem, 1.4rem + .1dvw, 2rem);
+    max-width: 520px;
   }
   a {
     width: calc(100% - 16px);
@@ -71,11 +74,14 @@
   }
   a:hover {border: solid 1px var(--clr-grey-500); background: var(--clr-purple-025);}
   .icon {
-    width: 16px;
+    width: 32px;
     min-width: 16px;
-    height: 16px;
+    height: 100%;
     min-height: 16px;
-    padding: 0px;
+    padding: 0px 8px;
     background: var(--clr-grey-050);
+    position: absolute;
+    right: 0px;
+    top: 0;
   }
 </style>
