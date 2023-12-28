@@ -107,7 +107,7 @@
       </ViewportIo>
         <ViewportIo let:percent tag="li" classNames="li-01">
           <span class="anime-01" style={anime_01(percent >= 96)}>
-            Aprender outras linguagens de programação.
+            Aprender outras linguagens de programação, como rust, por exemplo.
           </span>
       </ViewportIo>
         <ViewportIo let:percent tag="li" classNames="li-01">

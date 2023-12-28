@@ -69,6 +69,8 @@ const css_global_static = compress`
     ${purple_alphas}
     
     --clr-red-500: ${colors.red?.c500};
+    --clr-blue-500: ${colors.blue?.c500};
+    --clr-green-500: ${colors.green?.c500};
   }
 `
 

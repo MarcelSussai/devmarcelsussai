@@ -44,9 +44,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; -webkit-box-sizing: border-box; outline: 0; }
-html::-webkit-scrollbar {
-  width: var(--color-html-scroll-thumb-w);
-}
+html::-webkit-scrollbar { width: var(--color-html-scroll-thumb-w); }
 html::-webkit-scrollbar-button { display: none; }
 html::-webkit-scrollbar-track-piece { background: var(--color-html-scroll-track-piece); border-top: solid 56px var(--color-body-color); }
 html::-webkit-scrollbar-thumb {

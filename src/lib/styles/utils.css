@@ -166,3 +166,4 @@
 }
 @media screen and (min-width: 375px) { .li-01 { font-size: clamp(1.64rem, 1.64rem + .2dvw, 2rem); }}
 @media screen and (min-width: 792px) { .li-01 { font-size: clamp(1.80rem, 1.80rem + .2dvw, 2rem); }}
+

@@ -42,7 +42,7 @@
     border-right:   var(--bordlr-01, unset);
     border-top:     var(--bordtb-01, unset);
     border-bottom:  var(--bordtb-01, unset);
-    font-size:      clamp(6.4dvw, 6.4dvw, 3.44rem);
+    font-size:      clamp(6.4dvw, 6.4dvw, 4.48rem);
     font-weight:    300;
     background:     var(--clr-grey-125);
     color:          var(--clr-grey-800);
@@ -53,13 +53,13 @@
     max-width:      var(--max-w, 100%);
     position:       relative;
   }
-  @media screen and (min-width: 480px)  { h1 { font-size: 3.44rem; }}
+  @media screen and (min-width: 480px)  { h1 { font-size: 3.24rem; }}
   @media screen and (min-width: 792px)  { h1 {
     --margin-01: unset;
     --paddng-01: 8px 16px 8px 64px;
-    font-size: 3.44rem;
+    font-size: 4rem;
   }}
-  @media screen and (min-width: 1688px) { h1 { font-size: 4.8rem; }}
+  @media screen and (min-width: 1688px) { h1 { font-size: 6.4rem; }}
 
   h1 :global(.bold) { display: contents; font-weight: 900; }
 
